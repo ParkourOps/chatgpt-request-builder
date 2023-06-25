@@ -1,6 +1,6 @@
 {
   "name": "@parkour-ops/chatgpt-request-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides quick, easy and intuitive 'chainable' query-building interface for OpenAI's ChatGPT.",
   "files": [
     "./dist/",
@@ -13,7 +13,7 @@
     "testBuilt": "mocha -r dotenv/config -r ts-node/register --no-timeout --full-trace ./test/**/*.ts",
     "formatAll": "prettier --write .",
     "execFile": "ts-node -r dotenv/config",
-    "deploy": "npm run build && npm run formatAll && npm publish && npm version patch"
+    "deploy": "npm run build && npm run formatAll && npm version patch && npm publish"
   },
   "contributors": [
     {
