@@ -12,7 +12,8 @@
     "build": "rm -rf ./dist && tsc",
     "testBuilt": "mocha -r dotenv/config -r ts-node/register --no-timeout --full-trace ./test/**/*.ts",
     "formatAll": "prettier --write .",
-    "execFile": "ts-node -r dotenv/config"
+    "execFile": "ts-node -r dotenv/config",
+    "deploy": "npm run build && npm run formatAll && npm publish && npm version patch"
   },
   "contributors": [
     {
