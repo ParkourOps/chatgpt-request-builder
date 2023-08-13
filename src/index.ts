@@ -10,11 +10,12 @@ import { JSONSchema4 } from 'json-schema';
 
 const MAX_N_CHOICES = 100;
 
-function createClient(apiKey: string) {
+function createClient(apiKey: string, orgId?: string) {
   try {
     return new OpenAIApi(
       new Configuration({
         apiKey,
+        organization: orgId
       }),
     );
   } catch (e: any) {
@@ -23,12 +24,14 @@ function createClient(apiKey: string) {
 }
 
 let _apiKey: string | undefined;
+let _orgId: string | undefined;
 
-export function initialize(apiKey: string) {
+export function initialize(apiKey: string, orgId?: string) {
   if (!apiKey) {
     throw errors.invalidApiKey;
   }
   _apiKey = apiKey;
+  _orgId = orgId;
 }
 
 type ChatCompletionModel = 'gpt-3.5-turbo' | 'gpt-4';
@@ -40,7 +43,7 @@ class ChatCompletionRequest {
     if (!_apiKey) {
       throw errors.notInitialized;
     }
-    this.#client = createClient(_apiKey);
+    this.#client = createClient(_apiKey, _orgId);
     this.#request = {
       model,
       messages: [],
