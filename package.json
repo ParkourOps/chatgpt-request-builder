@@ -1,6 +1,6 @@
 {
   "name": "@parkour-ops/chatgpt-request-builder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Provides quick, easy and intuitive 'chainable' query-building interface for OpenAI's ChatGPT.",
   "files": [
     "./dist/",
