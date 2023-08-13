@@ -6,3 +6,6 @@ dist*/
 
 # env vars for testing
 .env
+
+# system files
+.DS_Store
