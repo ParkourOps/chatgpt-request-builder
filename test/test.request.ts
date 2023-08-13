@@ -7,7 +7,10 @@ describe('chat completion request (class)', function () {
   });
 
   it("should return a response from OpenAI's ChatGPT LLM", async function () {
-    initialize(process.env.API_KEY ?? "< No 'API_KEY' set in env. >", process.env.ORG_ID);
+    initialize(
+      process.env.API_KEY ?? "< No 'API_KEY' set in env. >",
+      process.env.ORG_ID,
+    );
     const res = await request('gpt-3.5-turbo')
       .systemPrompt('You have the role of a copywrighter.')
       .systemPrompt(

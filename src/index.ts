@@ -15,7 +15,7 @@ function createClient(apiKey: string, orgId?: string) {
     return new OpenAIApi(
       new Configuration({
         apiKey,
-        organization: orgId
+        organization: orgId,
       }),
     );
   } catch (e: any) {
